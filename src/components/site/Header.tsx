@@ -94,13 +94,19 @@ export function Header() {
             href={`tel:${BRAND.phoneDesign.replace(/\s/g, "")}`}
             className="surface-card flex items-center gap-2 rounded-full px-4 py-2 text-base font-bold text-foreground transition-colors hover:border-primary hover:text-primary"
           >
-            <Phone className="h-5 w-5 text-primary" /> {BRAND.phoneDesign}
+            <Phone className="h-5 w-5 text-primary" />
+            <span>
+              Infographiste <span className="font-extrabold">{BRAND.phoneDesign}</span>
+            </span>
           </a>
           <a
             href={`tel:${BRAND.phoneDev.replace(/\s/g, "")}`}
             className="surface-card flex items-center gap-2 rounded-full px-4 py-2 text-base font-bold text-foreground transition-colors hover:border-primary hover:text-primary"
           >
-            <Phone className="h-5 w-5 text-primary" /> {BRAND.phoneDev}
+            <Phone className="h-5 w-5 text-primary" />
+            <span>
+              Développeur <span className="font-extrabold">{BRAND.phoneDev}</span>
+            </span>
           </a>
         </div>
       </div>
