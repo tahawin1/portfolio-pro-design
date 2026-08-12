@@ -4,19 +4,21 @@ import { useState } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { BRAND, PROJECTS } from "@/lib/site-data";
 
-const TITLE = `Portfolio — Identité, print & sites web | ${BRAND.name}`;
 const DESCRIPTION =
   "Découvrez les réalisations de Mohamed Nassik : identités visuelles, packagings, affiches et sites web pour des marques marocaines.";
 
 export const Route = createFileRoute("/portfolio/")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-    ],
-  }),
+  head: () => {
+    const title = `Portfolio — Identité, print & sites web | ${BRAND.name}`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: DESCRIPTION },
+        { property: "og:title", content: title },
+        { property: "og:description", content: DESCRIPTION },
+      ],
+    };
+  },
   component: PortfolioPage,
 });
 

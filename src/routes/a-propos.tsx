@@ -3,20 +3,22 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { BRAND, PROJECTS, STATS, VALUES } from "@/lib/site-data";
 
-const TITLE = `À propos — ${BRAND.owner} | ${BRAND.name}`;
 const DESCRIPTION =
   "Infographiste devenu aussi développeur, Mohamed Nassik accompagne les marques marocaines depuis 10 ans, de l'identité visuelle au site web.";
 const PORTRAIT_IMAGE = "https://hdesign.ma/style/images/art/Identit%C3%A9-de-Marque.jpg";
 
 export const Route = createFileRoute("/a-propos")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-    ],
-  }),
+  head: () => {
+    const title = `À propos — ${BRAND.owner} | ${BRAND.name}`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: DESCRIPTION },
+        { property: "og:title", content: title },
+        { property: "og:description", content: DESCRIPTION },
+      ],
+    };
+  },
   component: AboutPage,
 });
 

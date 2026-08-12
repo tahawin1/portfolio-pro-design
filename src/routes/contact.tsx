@@ -8,18 +8,19 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { BRAND } from "@/lib/site-data";
 
-const TITLE = `Contact — Demander un devis | ${BRAND.name}`;
-const DESCRIPTION = `Contactez ${BRAND.owner} pour votre projet d'identité visuelle, de print ou de site web à ${BRAND.city}.`;
-
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-    ],
-  }),
+  head: () => {
+    const title = `Contact — Demander un devis | ${BRAND.name}`;
+    const description = `Contactez ${BRAND.owner} pour votre projet d'identité visuelle, de print ou de site web à ${BRAND.city}.`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+      ],
+    };
+  },
   component: ContactPage,
 });
 

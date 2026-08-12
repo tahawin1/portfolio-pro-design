@@ -10,19 +10,21 @@ import {
 } from "@/components/ui/accordion";
 import { BRAND, FAQ, PROJECTS, SERVICES } from "@/lib/site-data";
 
-const TITLE = `Services — Identité visuelle, web & print | ${BRAND.name}`;
 const DESCRIPTION =
   "Identité visuelle, design web & développement, print & packaging : les services de Mohamed Nassik, freelance à Casablanca.";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-    ],
-  }),
+  head: () => {
+    const title = `Services — Identité visuelle, web & print | ${BRAND.name}`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: DESCRIPTION },
+        { property: "og:title", content: title },
+        { property: "og:description", content: DESCRIPTION },
+      ],
+    };
+  },
   component: ServicesPage,
 });
 
