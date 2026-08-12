@@ -186,7 +186,7 @@ function Index() {
           </nav>
           <a
             href={`tel:${PHONE_DEV.replace(/\s/g, "")}`}
-            className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            className="btn-gradient rounded-full px-4 py-2 text-sm font-semibold transition-opacity hover:opacity-90"
           >
             Discutons projet
           </a>
@@ -212,7 +212,7 @@ function Index() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#contact"
-                  className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-ember)] transition-transform hover:-translate-y-0.5"
+                  className="btn-gradient rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-ember)] transition-transform hover:-translate-y-0.5"
                 >
                   Demander un devis gratuit
                 </a>
@@ -226,7 +226,7 @@ function Index() {
               <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
                 {stats.map((s) => (
                   <div key={s.label}>
-                    <dt className="font-display text-3xl font-bold text-accent">{s.value}</dt>
+                    <dt className="font-display text-3xl font-bold text-gradient-ember">{s.value}</dt>
                     <dd className="mt-1 text-xs text-muted-foreground">{s.label}</dd>
                   </div>
                 ))}
@@ -235,7 +235,7 @@ function Index() {
             <div className="relative">
               <div
                 aria-hidden
-                className="absolute -inset-6 -z-10 rounded-full opacity-30 blur-3xl"
+                className="absolute -inset-6 -z-10 rounded-full opacity-20 blur-3xl"
                 style={{ background: "var(--gradient-ember)" }}
               />
               <img
@@ -277,7 +277,7 @@ function Index() {
         </section>
 
         {/* Portfolio */}
-        <section id="portfolio" className="border-y border-border bg-card/40">
+        <section id="portfolio" className="border-y border-border bg-secondary/60">
           <div className="mx-auto max-w-6xl px-5 py-20">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <h2 className="text-3xl font-bold sm:text-4xl">Portfolio</h2>
@@ -288,7 +288,7 @@ function Index() {
                     onClick={() => setFilter(f)}
                     className={`rounded-full border px-4 py-2 text-sm transition-colors ${
                       filter === f
-                        ? "border-primary bg-primary text-primary-foreground"
+                        ? "border-transparent btn-gradient"
                         : "border-border text-muted-foreground hover:text-foreground"
                     }`}
                   >
@@ -310,7 +310,7 @@ function Index() {
                     />
                   </div>
                   <div>
-                    <span className="text-xs uppercase tracking-[0.2em] text-accent">
+                    <span className="text-xs uppercase tracking-[0.2em] text-primary">
                       {p.category}
                     </span>
                     <h3 className="mt-2 text-2xl font-bold">{p.name}</h3>
@@ -392,7 +392,7 @@ function Index() {
                     href={`https://wa.me/212660594846`}
                     target="_blank"
                     rel="noreferrer"
-                    className="block rounded-lg bg-primary px-5 py-4 text-center font-semibold text-primary-foreground shadow-[var(--shadow-ember)] transition-transform hover:-translate-y-0.5"
+                    className="btn-gradient block rounded-full px-5 py-4 text-center font-semibold shadow-[var(--shadow-ember)] transition-transform hover:-translate-y-0.5"
                   >
                     Écrire sur WhatsApp
                   </a>
